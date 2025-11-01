@@ -1,0 +1,357 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+.header-section {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #dddfe2;
+    margin-bottom: 30px;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin: 0;
+}
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.column {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-column {
+    flex: 1;
+    min-width: 300px; /* Adjusted min-width for better layout */
+    padding: 20px;
+}
+
+.iframe-column {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    min-height: 70vh;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* --- Hybrid Dropdown / Tab Component --- */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.dropdown-trigger:hover {
+    background-color: #eee;
+}
+
+.trigger-text {
+    color: #333;
+}
+
+.trigger-icon {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #606770;
+    transition: transform 0.2s ease-in-out;
+}
+
+.custom-dropdown.active .trigger-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.custom-dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Content within the dropdown menu */
+.type-selector {
+    display: flex;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.type-tab {
+    padding: 6px 14px;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #606770;
+    margin-right: 8px;
+    border: none;
+}
+
+.type-tab.active {
+    background-color: #e7f3ff;
+    color: #0866ff;
+}
+
+.commands-container {
+    padding: 8px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.command-list {
+    display: none;
+}
+
+.command-list.active {
+    display: block;
+}
+
+.command-list a {
+    /* Use flexbox to control children */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align children to the left */
+
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #1c1e21;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    border-bottom: 1px solid #f0f2f5; /* Separator line */
+}
+
+.command-list a:last-child {
+    border-bottom: none;
+}
+
+.command-list a:hover {
+    background-color: #f0f2f5;
+}
+
+.badges-wrapper {
+    /* Also use flexbox to ensure badges are horizontal */
+    display: flex;
+    gap: 6px; /* Replaces margin for spacing between badges */
+    margin-top: 6px; /* Vertical space between title and badges */
+}
+
+/* --- Command Constructor --- */
+.command-constructor {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.command-parts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.command-part {
+    position: relative; /* For tooltip positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.command-part code {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    min-width: 50px;
+    text-align: left; /* Align wrapped text to the left */
+    word-break: break-all; /* Force long strings to wrap */
+}
+
+.command-part code:hover {
+    background-color: #e7f3ff;
+    border-color: #0866ff;
+}
+
+.command-part .part-description {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #606770;
+    text-align: center;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+/* Disabled state for non-copyable parts */
+.command-part.disabled code {
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+.command-part.disabled code:hover {
+    background-color: #f8f9fa; /* Override hover effect */
+    border-color: #ccc;
+}
+
+.command-warning.visible {
+    display: block;
+    border: 1px solid #ffc107;
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+/* --- Inline Badges --- */
+.inline-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px; /* Smaller font as requested */
+    font-weight: 600;
+    margin-left: 8px;
+    border: 1px solid;
+    vertical-align: middle; /* Align with text */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Good Level - Green */
+.badge-level-good {
+    background-color: #e9f7ec;
+    border-color: #28a745;
+    color: #1f7d3a;
+}
+
+/* Medium Level - Orange */
+.badge-level-medium {
+    background-color: #fff8e1;
+    border-color: #fd7e14;
+    color: #b0580d;
+}
+
+/* Low Level - Red */
+.badge-level-low {
+    background-color: #fbeae5;
+    border-color: #dc3545;
+    color: #a71d2a;
+}
+.tab-section {
+    margin-bottom: 25px;
+}
+.tab-section:last-child {
+    margin-bottom: 0;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.tab-button {
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #606770;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-button:hover {
+    background-color: #f0f2f5;
+    color: #000;
+}
+
+.tab-button.active {
+    color: #0866ff;
+    border-bottom-color: #0866ff;
+    font-weight: 600;
+}
+
+.tab-content {
+    padding: 15px 5px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.video-placeholder {
+    width: 100%;
+    min-height: 200px;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}

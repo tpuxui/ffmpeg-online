@@ -1,0 +1,202 @@
+.component-spin {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: hsla(0, 0%, 100%, 0.9);
+}
+
+.command-text {
+  border: 1px solid #eee;
+  padding: 3px 6px;
+  color: #ccc;
+  border-radius: 3px;
+}
+
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: none !important;
+}
+
+.ant-spin-nested-loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.page-app {
+  width: 500px;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.ant-upload.ant-upload {
+  width: 500px;
+  padding: 10px;
+}
+
+.exec {
+  width: 500px;
+}
+
+.ant-input {
+  margin: 10px 0;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1e1e1e; /* Consistent with .page-app */
+}
+
+.page-app.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.page-app.dark-mode h2,
+.page-app.dark-mode h4 {
+  color: #f0f0f0;
+}
+
+.page-app.dark-mode p {
+  color: #b0b0b0 !important;
+}
+
+.page-app.dark-mode .ant-input,
+.page-app.dark-mode .ant-select-selector,
+.page-app.dark-mode .ant-upload-drag {
+  background-color: #333333 !important;
+  color: #e0e0e0 !important;
+  border-color: #555555 !important;
+}
+
+.page-app.dark-mode .ant-input::placeholder,
+.page-app.dark-mode .ant-select-selection-placeholder {
+  color: #888888 !important;
+}
+
+.page-app.dark-mode .ant-select-arrow {
+  color: #e0e0e0 !important;
+}
+
+.page-app.dark-mode .ant-btn-primary {
+  background-color: #0056b3 !important;
+  border-color: #0056b3 !important;
+  color: #ffffff !important;
+}
+
+.page-app.dark-mode .ant-btn-primary:hover {
+  background-color: #004085 !important;
+  border-color: #004085 !important;
+}
+
+.page-app.dark-mode .ant-btn {
+  background-color: #444444 !important;
+  color: #e0e0e0 !important;
+  border-color: #666666 !important;
+}
+
+.page-app.dark-mode .ant-btn:hover,
+.page-app.dark-mode .ant-btn:focus {
+  background-color: #555555 !important;
+  color: #ffffff !important;
+  border-color: #777777 !important;
+}
+
+.page-app.dark-mode .ant-upload-text {
+  color: #e0e0e0 !important;
+}
+
+.page-app.dark-mode .ant-upload-drag-icon .anticon {
+  color: #e0e0e0 !important;
+}
+
+.page-app.dark-mode .command-text {
+  background-color: #282828;
+  border-color: #555;
+  color: #aaa;
+}
+
+.page-app.dark-mode a {
+  color: #90caf9; /* Lighter blue for links in dark mode */
+}
+
+.page-app.dark-mode .github-corner {
+  fill: #333333 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark Mode Styles for Uploaded File List */
+.page-app.dark-mode .ant-upload-list-item-name,
+.page-app.dark-mode .ant-upload-list-item-card-actions .anticon,
+.page-app.dark-mode .ant-upload-list-item-info .anticon {
+  color: #e0e0e0 !important; /* Light color for file name and icons */
+}
+
+.page-app.dark-mode .ant-upload-list-item {
+  background-color: #333333 !important; /* Darker background for list item */
+  border-color: #555555 !important; /* Darker border */
+}
+
+/* Dark Mode Styles for Ant Design Select Dropdown */
+body.dark-mode .ant-select-dropdown {
+  background-color: #282828 !important; /* Dark background for dropdown */
+  border-color: #555555 !important;
+}
+
+body.dark-mode .ant-select-item {
+  color: #e0e0e0 !important; /* Light text color for dropdown items */
+}
+
+body.dark-mode .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #0056b3 !important; /* Selected item background */
+  color: #ffffff !important;
+}
+
+body.dark-mode .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: #3a3a3a !important; /* Hovered item background */
+}
+
+body.dark-mode .ant-select-item-group {
+  color: #b0b0b0 !important; /* Group label color */
+}
+
+/* Dark Mode Styles for Uploaded File List Item Hover */
+.page-app.dark-mode .ant-upload-list-item:hover {
+  background-color: #555555 !important; /* Slightly lighter dark background on hover */
+}
+
+.page-app.dark-mode .ant-upload-list-item:hover .ant-upload-list-item-name,
+.page-app.dark-mode .ant-upload-list-item:hover .ant-upload-list-item-name a {
+  color: #1e1e1e !important; /* Dark text color on hover for file name */
+}
+
+.page-app.dark-mode .ant-upload-list-item:hover .ant-upload-list-item-info .anticon {
+  color: #1e1e1e !important; /* Dark text color on hover for file type icon */
+}
